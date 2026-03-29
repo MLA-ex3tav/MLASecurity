@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración de Licencias | MLA Security</title>
+    <meta name="description" content="Gestión minimalista y eficiente de licencias de software.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <!-- Supabase Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>Gestión de Licencias</h1>
+                <div class="status-indicators">
+                    <div id="electronStatus" class="status-pill checking">
+                        <span class="pulse"></span>
+                        <span class="status-text">Buscando App...</span>
+                    </div>
+                    <div id="connectionStatus" class="status-pill checking">
+                        <span class="pulse"></span>
+                        <span class="status-text">Verificando Supabase...</span>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted);">MLA Security Admin Panel</p>
+            <div class="header-line"></div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Buscar por ID de Máquina..." id="idSearch">
+        </div>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID de Máquina</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="licenseTable">
+                    <tr>
+                        <td colspan="3" style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">
+                            Conectando con Supabase...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Cargar configuración antes que los scripts de lógica -->
+    <script src="config.js"></script>
+    <!-- Lógica del sitio -->
+    <script src="script.js"></script>
+</body>
+</html>
