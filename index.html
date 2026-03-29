@@ -20,23 +20,29 @@
         <header>
             <div class="header-top">
                 <h1>Gestión de Licencias</h1>
-                <div class="status-indicators">
-                    <div id="electronStatus" class="status-pill checking">
-                        <span class="pulse"></span>
-                        <span class="status-text">Buscando App...</span>
-                    </div>
-                    <div id="connectionStatus" class="status-pill checking">
-                        <span class="pulse"></span>
-                        <span class="status-text">Verificando Supabase...</span>
+                <div class="header-actions">
+                    <button id="refreshBtn" class="refresh-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"></path></svg>
+                        Actualizar
+                    </button>
+                    <div class="status-indicators">
+                        <div id="electronStatus" class="status-pill checking">
+                            <span class="pulse"></span>
+                            <span class="status-text">Buscando App...</span>
+                        </div>
+                        <div id="connectionStatus" class="status-pill checking">
+                            <span class="pulse"></span>
+                            <span class="status-text">Verificando Supabase...</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <p style="font-size: 13px; color: var(--text-muted);">MLA Security Admin Panel</p>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 24px;">MLA Security Admin Panel</p>
             <div class="header-line"></div>
         </header>
 
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Buscar por ID de Máquina..." id="idSearch">
+            <input type="text" class="search-input" placeholder="Buscar por ID o Nombre de Equipo..." id="idSearch">
         </div>
 
         <div class="table-responsive">
@@ -44,13 +50,15 @@
                 <thead>
                     <tr>
                         <th>ID de Máquina</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
+                        <th>Nombre de Equipo</th>
+                        <th>Fecha Registro</th>
+                        <th>Último Visto</th>
+                        <th>Estado de Licencia</th>
                     </tr>
                 </thead>
                 <tbody id="licenseTable">
                     <tr>
-                        <td colspan="3" style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">
+                        <td colspan="5" style="text-align: center; padding: 40px; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">
                             Conectando con Supabase...
                         </td>
                     </tr>
